@@ -52,7 +52,7 @@ def generatefull(grid=None):
     grid=fill(grid,0,order)
     return grid
 
-def printgrid(grid,blank="-",spacing=""):
+def printgrid(grid,spacing=" ",blank="-"):
     s=""
     i=0
     for y in range(9):
