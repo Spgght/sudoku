@@ -7,7 +7,6 @@ def coords(i):
     return [i%9,i//9]
 
 def checkvalid(grid,x,y,n):
-    valid=list(range(1,10))
     for i in range(9):
         a=grid[index(i,y)]
         if a == n:
