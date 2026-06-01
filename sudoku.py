@@ -4,22 +4,18 @@ def index(x,y):
     return x+9*y
 
 def coords(i):
-    return [i%9,i//9]
+    return (i%9,i//9)
 
 def checkvalid(grid,x,y,n):
+    X=3*(x//3)
+    Y=3*(y//3)
     for i in range(9):
-        a=grid[index(i,y)]
-        if a == n:
+        if grid[index(i,y)]==n:
             return False
-    for i in range(9):
-        a=grid[index(x,i)]
-        if a == n:
+        if grid[index(x,i)]==n:
             return False
-    for X in range(3*(x//3),3*(x//3)+3):
-        for Y in range(3*(y//3),3*(y//3)+3):
-            a=grid[index(X,Y)]
-            if a == n:
-                return False
+        if grid[index(X+(i//3),Y+(i%3))]==n:
+            return False
     return True
 
 def fill(grid,i,order):
